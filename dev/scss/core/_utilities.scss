@@ -1,0 +1,206 @@
+// *************************************
+//
+//   Utilities
+//   -> Single purpose declarations
+//
+// *************************************
+
+// -------------------------------------
+// Micro utilities
+// -------------------------------------
+
+.u-cf {
+  @include clearfix;
+}
+
+.u-hide {
+  display: none;
+}
+
+// -------------------------------------
+// Layout
+// -------------------------------------
+
+.u-layoutBlock {
+  display: block;
+}
+
+.u-layoutFullWidth {
+  width: 100%;
+}
+// -------------------------------------
+// Color schemes
+// -------------------------------------
+.scheme1{
+	background-color:$c-1;
+	color:$c-2;
+	a{
+		color:$c-2;
+	}
+}
+.scheme1-invert{
+	background-color:$c-2;
+	//color:$c-1;
+	a{
+	//	color:$c-1;
+	}
+}
+.scheme2{
+	background-color:$c-2;
+	color:$c-3;
+	a{
+		color:$c-3;
+	}
+}
+.scheme2-invert{
+	background-color:$c-3;
+	color:$c-2;
+	a{
+		color:$c-2;
+	}
+}
+// -------------------------------------
+// Grid
+// -------------------------------------
+
+.u-gridContainer {
+  @include outer-container;
+  padding-left: $l-insideGutter;
+  padding-right: $l-insideGutter;
+}
+
+.u-gridRow {
+  @include row();
+}
+.u-gridCol1 {
+	@include span-columns(1);
+}
+.u-gridCol2 {
+	@include span-columns(2);
+}
+.u-gridCol3 {
+	@include span-columns(3);
+}
+.u-gridCol4 {
+	@include span-columns(4);
+}
+.u-gridCol5 {
+	@include span-columns(5);
+}
+.u-gridCol6 {
+	@include span-columns(6);
+}
+.u-gridCol7 {
+	@include span-columns(7);
+}
+.u-gridCol8 {
+	@include span-columns(8);
+}
+.u-gridCol9 {
+	@include span-columns(9);
+}
+.u-gridCol10 {
+	@include span-columns(10);
+}
+.u-gridCol11 {
+	@include span-columns(11);
+}
+.u-gridCol12 {
+	@include span-columns(12);
+}
+//===========
+.u-Row {
+  @include row();
+}
+.u-Col1 {
+	@include span-columns(1);
+}
+.u-Col2 {
+	@include span-columns(2);
+}
+.u-Col3 {
+	@include span-columns(3);
+}
+.u-Col4 {
+	@include span-columns(4);
+}
+.u-Col5 {
+	@include span-columns(5);
+}
+.u-Col6 {
+	@include span-columns(6);
+}
+.u-Col7 {
+	@include span-columns(7);
+}
+.u-Col8 {
+	@include span-columns(8);
+}
+.u-Col9 {
+	@include span-columns(9);
+}
+.u-Col10 {
+	@include span-columns(10);
+}
+.u-Col11 {
+	@include span-columns(11);
+}
+.u-Col12 {
+	@include span-columns(12);
+}
+//$tabletBreakPoint is _settings.scss
+@media screen and (max-width: $gridColSpan12Breakpoint){
+	.u-gridCol1, .u-gridCol2, .u-gridCol3, .u-gridCol4, .u-gridCol5,
+	.u-gridCol6, .u-gridCol7, .u-gridCol8, .u-gridCol9, .u-gridCol10,
+	.u-gridCol11 {
+		@include span-columns(12);
+	}
+
+}
+@media screen and (max-width: $gridColSpan12Breakpoint){
+	.u-Col1, .u-Col2, .u-Col3, .u-Col4, .u-Col5,
+	.u-Col6, .u-Col7, .u-Col8, .u-Col9, .u-Col10,
+	.u-Col11 {
+		@include span-columns(12);
+	}
+
+}
+// -------------------------------------
+// Text
+// -------------------------------------
+
+.u-textShout {
+  text-transform: uppercase;
+}
+
+.u-textFat {
+  font-weight: bold;
+}
+
+.u-textLead {
+  font-size: 125%;
+}
+
+.u-textRight {
+  text-align: right;
+}
+
+.u-textCenter {
+  text-align: center;
+}
+
+.u-textLeft {
+  text-align: left;
+}
+
+// -------------------------------------
+// Objects
+// -------------------------------------
+
+.u-objLeft {
+  float: left;
+}
+
+.u-objRight {
+  float: right;
+}
