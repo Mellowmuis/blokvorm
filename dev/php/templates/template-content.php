@@ -16,11 +16,11 @@ Template Name: Content
 			?>
 			<?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
 		</div>
-		<div class="u-Col4">
+		<div class="u-Col4 jeroen">
 			<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 				  $image_url = $image[0];
 			?>
-			<img class="less-marg" src="<?php echo $image_url; ?>" />
+			<img src="<?php echo $image_url; ?>" />
 			<p>
 				<?php echo $text1; ?> 
 
@@ -31,9 +31,9 @@ Template Name: Content
 	
 	
 </div>
-<div class="u-gridContainer">
+<div class="u-gridContainer marginprojecten">
 	<div class="u-Row thumb-cont">
-		<div id="content-1" class="content">
+		<div>
 			<ul>
 				<li>
 					<a href="#">
@@ -97,7 +97,7 @@ Template Name: Content
 				</li>
 				<li>
 					<a href="#">
-						<div class="thumb">
+						<div class="thumblast">
 							<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/last.jpg">
 							<div class="thumb-text">
 								<a href="#">Vrijwerk</a>

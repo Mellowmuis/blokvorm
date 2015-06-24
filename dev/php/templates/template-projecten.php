@@ -1,93 +1,108 @@
 <?php
 /*
-Template Name: projeten
+Template Name: projecten
 */
 ?>
 
 <?php get_header(); ?>
-<div class="gradient-bg">
-	<div class="button-group filter-button-group">
-		<div class="u-gridContainer">
-		  <button class="is-checked" data-filter="*">ALLE PROJECTEN</button>
-		  <button data-filter=".INTERIEUR">INTERIEUR ONTWERP</button>
-		  <button data-filter=".EXTERIEUR">EXTERIEUR ONTWERP</button>
-		  <button data-filter=".MEUBELONTWERP">MEUBELONTWERP</button>
-		  <button data-filter=".PRODUCT">PRODUCT DESIGN</button>
-		  <button data-filter=".BUITENRUIMTE">BUITENRUIMTE</button>
-		  <button data-filter=".HEKWERK">HEKWERK</button>
-		  <button data-filter=".VRIJWERK">VRIJWERK</button>
-		</div>
-	</div>
-	<div class="u-gridContainer" style="max-width:122em;">
-		
-		<div class="grid" style="max-width:122em; width:100%;">
-			<?php
 
-				$args = array(
-					'post_type' => 'projecten',
-					'posts_per_page'=>999
-				);
-				$projecten = new WP_Query( $args );
-				$num = count($projecten);
-				$counter = 0;
-				if( $projecten->have_posts() ) {
-					while( $projecten->have_posts() ) {
-						$projecten->the_post();
-						$counter++;
-						?>
-						<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-							  $image_url = $image[0];
-						?>
-						<?php
-						 $image1 = get_field('foto_1'); 
-						 $image2 = get_field('foto_2'); 
-						 $image3 = get_field('foto_3'); 
-						 $image4 = get_field('foto_4');
-						 $categorie = get_field('categorie');
-						 ?>
-						<div class="grid-item slideDown <?php echo $categorie ?>">
-							<div class="item-content">
-								<div class="grid-text">
-									<?php the_title(); ?>
-								</div> 
-								<div class="left-culumn u-cf">
-									<div class="spec-img u-cf">
-										<img src="<?php echo $image_url; ?>" />
-									</div>
-									
-									
-									<div class="image-row u-cf">
-										<a href="#"><img src="<?php echo $image1['sizes']['medium']; ?>" alt="<?php echo $image1['alt']; ?>"/></a>
-							       		<a href="#"><img src="<?php echo $image2['sizes']['medium']; ?>" alt="<?php echo $image2['alt']; ?>"/></a>
-							       		<a href="#"><img src="<?php echo $image3['sizes']['medium']; ?>" alt="<?php echo $image3['alt']; ?>"/></a>
-							       		<a href="#"><img style="margin-right:0px;" src="<?php echo $image4['sizes']['medium']; ?>" alt="<?php echo $image4['alt']; ?>"/></a>
-							       	</div>
-								</div>
-								<div class="right-column">
-									<div class="hidden-content">
-										<?php the_content(); ?>
-										
-										
-									</div>
-								</div>
-								
-								
-							</div>							
+
+
+		<article class="Content" id="post-<?php the_ID(); ?>">
+			<div class="u-gridContainer">
+				
+					<?php
+
+					        $taxonomies = array( 
+					            'projecttypes'
+					        );
+
+					        $args = array(
+					            'orderby'           => 'name', 
+					            'order'             => 'ASC',
+					            'hide_empty'        => 0,
+					            'exclude'           => array(), 
+					            'exclude_tree'      => array(), 
+					            'include'           => array(),
+					            'fields'            => 'all', 
+					            'slug'              => '',
+					            'parent'            => '',
+					            'hierarchical'      => true, 
+					            'child_of'          => 0, 
+					            'get'               => '', 
+					            'name__like'        => '',
+					            'description__like' => '',
+					            'pad_counts'        => false, 
+					            'offset'            => '', 
+					            'search'            => '', 
+					            'cache_domain'      => 'core'
+					        ); 
+
+					        $terms = get_terms($taxonomies, $args);
+
+
+					// now run a query for each animal family
+					foreach( $terms as $term ) {
+					 
+					    // Define the query
+					    $args = array(
+					        'post_type' => 'projecten',
+					        'projecttypes' => $term->name,
+				        	'post_status' => 'publish'
+
+					    );
+					    $query = new WP_Query( $args );
+					     
+					    if($query->post_count == 0) {
+					     	continue;
+					    }     
+					    // output the term name in a heading tag                
+
+					    ?>
+				    	
+					    
+						    <?php
+						    // output the post titles in a list
+						     	$total =  $query->post_count;
+						        // Start the Loop
+						        $counter = 1;
+						        while ( $query->have_posts() ) : $query->the_post(); ?>
+						        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+									  $image_url = $image[0];
 							
-						</div>
-						<?php
-					}
-				}
-			?>
-		  
-		</div>
+									  $isLast = false;
+									  //echo $total.'-'.$counter;
+									  if(intval($total) == $counter){
+									  	$isLast = true;
+									  }
 
+								?>
+								<?php if($counter%6 == 1) { ?> <div class="u-gridRow " style="border-bottom: 0px solid #ccc;"> <?php } ?>
+									<?php if($counter == 1){  ?>
+										<h3 class="less-marg" style="font-weight: 400 ;"><?php echo $term->name; ?></h3>
+									<?php } ?>
+									
+									<div class="u-gridCol2" style="">
+										<a href="<?php the_permalink();?>">
+											<img src="<?php echo $image_url; ?>" style="margin-bottom: 10px;"/>
+										</a>
+									</div>
+							
+								<?php if($isLast) { ?> <div style="clear:both;"><hr/></div><?php } ?>
+								<?php if($counter%6 == 0 || $isLast) { ?></div> <?php } ?>
+						        <?php $counter++; 
+						        endwhile;
+						     
+						     
+						    // use reset postdata to restore orginal query
+						    wp_reset_postdata();
+						
+							?>
 
-	</div>
-	
-	
-</div>
-
+						<?php 
+						} ?>
+			</div>
+		</article>
 
 
 <?php get_footer(); ?>

@@ -52,6 +52,14 @@
 	margin-top:10px;
 	margin-bottom:10px;
 }
+
+.jeroen{
+	img{
+		margin-top: 55px;
+  		width: 64%;
+	}
+}
+
 .thumb-cont{
 	padding:40px 0px;
 }
@@ -59,6 +67,15 @@
 	width:200px;
 	padding-right:20px;
 	img{width:100%;}
+	width: 176px;
+	float: left;
+	margin-right: 3.3px;
+}
+.thumblast{
+	width:156px !important;
+	img{width:100%;}
+	width: 176px;
+	float: left;
 }
 .thumb-text{
 	text-transform: uppercase;
@@ -74,6 +91,14 @@
 	}
 }
 
+.huge_it_slideshow_image_wrap_gallery_2{
+	margin-top: 70px !important;
+}
+
+.huge_it_slideshow_dots_gallery_2 {
+  display: none !important;
+}
+
 .thumb-7{
 	width:13%;
 	margin-right:1.5%;
@@ -81,4 +106,15 @@
 	&:last-of-type{
 		margin-right:0px;
 	}
+}
+
+.marginprojecten{
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+@media all and (max-width: 1040px) {  
+  .top-contact{
+  	display: none;
+  }
 }

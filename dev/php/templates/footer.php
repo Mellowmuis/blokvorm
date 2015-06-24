@@ -1,22 +1,27 @@
 	<div class="Footer scheme1-invert">
 		<div class="u-gridContainer">
-			<div class="u-Col2 footer-box">
-				<h5 class="no-marg">CONTACT</h5>
+			<div class="u-Col2 footer-box" style="width: 12.4%;">
+				<h5 class="no-marg">ADRES</h5>
 				<ul>
 					<li>Sluismeesterslag 3</li>
 					<li>2805 DZ Gouda</li>
+				</ul>
+			</div>
+			<div class="footer-box" style="width: 14.6%; float:left;">
+				<h5 class="no-marg">CONTACT</h5>
+				<ul>
 					<li><a href="tel:0619011511"><i class="fa fa-phone"></i>  06 – 190 11 511</a></li>
 					<li><a href="mailto:info@blokvorm.nl"><i class="fa fa-envelope"></i>  info@blokvorm.nl</a></li>
 				</ul>
 			</div>
-			<div class="u-Col2 footer-box">
+			<div class="u-Col2 footer-box" style="margin-right: 0%;">
 				<h5 class="no-marg">INSCHRIJVINGEN</h5>
 				<ul>
 					<li>BTW: NL8512.02.366B01</li>
 					<li>KVK: 54163846</li>
 				</ul>
 			</div>
-			<div class="u-Col2 footer-box">
+			<div class="u-Col2 footer-box" style="  width: 12%; margin-right: 2.4%;">
 				<h5 class="no-marg">COPYRIGHT</h5>
 				<p  style="width:95px; font-size:12px; float:left;">
 					All our concepts 
@@ -24,20 +29,20 @@
 					are registered by 
 
 				</p>
-				<img  style="width:85px; float:left;" src="<?php echo get_stylesheet_directory_uri(); ?>/img/cc-proof.png">
+				<img  style="width:47px; float:left; margin-top: 8px;" src="<?php echo get_stylesheet_directory_uri(); ?>/img/cc-proof.png">
 			</div>
-			<div class="u-Col2 footer-box">
+			<div class="u-Col2 footer-box" style="width: 12.2%;">
 				<h5 class="no-marg">ONZE APP</h5>
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/googleplay.jpg">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/googleplay.jpg" style="margin-top: 13px;">
 			</div>
-			<div class="u-Col2 footer-box">
+			<div class="u-Col2 footer-box" style="width: 12%;">
 				<h5 class="no-marg">SOCIAL MEDIA</h5>
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/facebook.jpg">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/twitter.jpg">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/google.jpg">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/linkedin.jpg">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/facebook.jpg" style="margin-top: 13px;">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/twitter.jpg" style="margin-top: 13px;">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/google.jpg" style="margin-top: 13px;">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/linkedin.jpg" style="margin-top: 13px;">
 			</div>
-			<div class="u-Col2 footer-box">
+			<div class="u-Col2 footer-box" style="width: 10%">
 				<h5 class="no-marg">SITEMAP</h5>
 			<?php if ( is_active_sidebar( 'footer-widgets' ) ) : ?>
 			<div class="Footer-inner u-gridRow">

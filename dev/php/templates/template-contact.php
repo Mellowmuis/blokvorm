@@ -27,7 +27,7 @@ Template Name: Contactpage
 				<div class="u-gridContainer">
 					
 					<div class="u-gridRow">
-						<h2 class="less-marg thin"><?php the_title(); ?></h2><hr>
+						<h3 class="less-marg" style="font-weight: 400 ;"><?php the_title(); ?></h3><hr>
 						<div class="adress u-gridCol4">
 							
 							<div class="adress-info">

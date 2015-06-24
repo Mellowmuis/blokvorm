@@ -16,16 +16,17 @@
 						<?php the_content(); ?>
 						<?php wp_link_pages(array('before' => '<p>Pages: ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
 						<?php the_tags( '<p>Tags: ', ', ', '</p>'); ?>
+						<nav>
+							<div><?php previous_post_link('&laquo; %link') ?></div>
+							<div><?php next_post_link('%link &raquo;') ?></div>
+						</nav>
 					</div>
 					<div class="u-Col8 detail-photo">
-						<img src="<?php echo $image_url; ?>" />
+						<?php echo do_shortcode(get_field('shortcode')); ?>
 					</div>
 				</article>
 				
-				<nav>
-					<div><?php previous_post_link('&laquo; %link') ?></div>
-					<div><?php next_post_link('%link &raquo;') ?></div>
-				</nav>
+				
 
 				
 			<?php endwhile; else: ?>

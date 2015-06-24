@@ -36,7 +36,7 @@ Template Name: Homepage
 						</div>
 						<?php
 					}
-				}
+				} 
 			?>
 		</div>
 		<div class="marg-top" style="margin-bottom:-15px;">
@@ -48,9 +48,9 @@ Template Name: Homepage
 	</div>
 	
 </div>
-<div class="u-gridContainer">
+<div class="u-gridContainer marginprojecten">
 	<div class="u-Row thumb-cont">
-		<div id="content-1" class="content">
+		<div>
 			<ul>
 				<li>
 					<a href="#">
@@ -114,7 +114,7 @@ Template Name: Homepage
 				</li>
 				<li>
 					<a href="#">
-						<div class="thumb">
+						<div class="thumblast">
 							<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/last.jpg">
 							<div class="thumb-text">
 								<a href="#">Vrijwerk</a>
